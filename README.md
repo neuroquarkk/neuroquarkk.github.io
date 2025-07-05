@@ -1,1 +1,0 @@
-# neuroquarkk.github.io
