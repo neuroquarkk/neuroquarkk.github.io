@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="projects-section">
+    <h1 class="projects-title">Projects</h1>
+    <ul class="projects-list">
+        {{ if site.Data.projects }}
+        {{ range site.Data.projects }}
+        <li class="project-card">
+            <div class="project-header">
+                <a href="{{ .github }}" class="project-name" target="_blank">{{ .title }}</a>
+                {{ with .live }}
+                <a href="{{ . }}" class="project-live" target="_blank">Live ↗</a>
+                {{ end }}
+            </div>
+            <p class="project-description">{{ .description }}</p>
+            <div class="project-tech">
+                {{ range .tech }}
+                <span class="project-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+        </li>
+        {{ end }}
+        {{ else }}
+        <p class="empty-message">No projects yet</p>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}

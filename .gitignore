@@ -1,0 +1,12 @@
+/public/
+
+/resources/
+
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+node_modules/
+package-lock.json
+.hugo_build.lock

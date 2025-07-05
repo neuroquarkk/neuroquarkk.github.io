@@ -1,0 +1,121 @@
+@media (max-width: 1024px) {
+    .articles-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    .articles-side {
+        position: relative;
+        top: auto;
+        order: -1;
+    }
+    .sidebar-section {
+        margin-bottom: var(--spacing-lg);
+    }
+    .tag-filter {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+    .tag-filter a {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --container-max-width: 100%;
+        --spacing-xl: 1.5rem;
+        --spacing-xxl: 2rem;
+    }
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    .profile-card {
+        padding: var(--spacing-xl);
+    }
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    .article-title-single {
+        font-size: var(--font-size-3xl);
+    }
+    .article-meta-single {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .article-tags {
+        gap: var(--spacing-sm);
+    }
+    .tag-chip {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-xs);
+    }
+    .articles-list {
+        gap: var(--spacing-md);
+    }
+    .article-item {
+        padding: var(--spacing-lg);
+    }
+    .article-nav {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    .nav-prev,
+    .nav-next {
+        max-width: 100%;
+        width: 100%;
+    }
+    .toc {
+        padding: var(--spacing-lg);
+    }
+    .social-links {
+        gap: var(--spacing-sm);
+    }
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-base);
+    }
+}
+@media (max-width: 480px) {
+    .profile-card {
+        padding: var(--spacing-lg);
+    }
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    .article-title-single {
+        font-size: var(--font-size-2xl);
+    }
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+    .article-content {
+        font-size: var(--font-size-base);
+    }
+    .article-content pre {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    .article-content blockquote {
+        padding: var(--spacing-md);
+    }
+    .nav-prev,
+    .nav-next {
+        padding: var(--spacing-md);
+    }
+    .nav-arrow {
+        font-size: var(--font-size-xl);
+    }
+}

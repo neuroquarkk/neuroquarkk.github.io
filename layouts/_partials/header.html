@@ -1,0 +1,17 @@
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="{{ "/" | absURL }}" class="logo">
+                {{ .Site.Title }}
+            </a>
+            <nav class="nav">
+                {{ range .Site.Menus.main }}
+                {{ $isActive := or (eq $.RelPermalink .URL) (hasPrefix $.RelPermalink .URL) }}
+                <a href="{{ .URL | absURL }}" class="{{ if $isActive }}active{{ end }}">
+                    {{ .Name }}
+                </a>
+                {{ end }}
+            </nav>
+        </div>
+    </div>
+</header>

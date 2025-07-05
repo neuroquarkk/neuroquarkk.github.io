@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default " en" }}">
+
+<head>
+    {{ partial "head.html" . }}
+    <style>
+        .error-section {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+        }
+
+        .error-title {
+            font-size: var(--font-size-4xl);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 0 12px var(--color-primary-glow);
+        }
+
+        .error-message {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .error-link {
+            font-size: var(--font-size-base);
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all var(--transition-fast);
+        }
+
+        .error-link:hover {
+            color: var(--color-primary);
+            text-shadow: 0 0 6px var(--color-primary-glow);
+        }
+    </style>
+</head>
+
+<body>
+    {{ partial "header.html" . }}
+    <main class="container">
+        <section class="error-section">
+            <h1 class="error-title">404 - Not Found</h1>
+            <p class="error-message">Sorry, the page you’re looking for doesn’t exist.</p>
+            <a href="{{ "/" | absURL }}" class="error-link">← Back to Home</a>
+        </section>
+    </main>
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

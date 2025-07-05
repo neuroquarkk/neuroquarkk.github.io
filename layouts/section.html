@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="articles-layout">
+    <div class="articles-main">
+        <h1 class="section-title">All Articles</h1>
+
+        {{ if .Pages }}
+        {{ range .Pages.GroupByDate "2006" }}
+        <div class="year-group">
+            <h2 class="year-title">{{ .Key }}</h2>
+            {{ range .Pages }}
+            {{ partial "compact-article.html" . }}
+            {{ end }}
+        </div>
+        {{ end }}
+        {{ else }}
+        <p class="empty-message">No articles yet</p>
+        {{ end }}
+    </div>
+
+    <aside class="articles-sidebar">
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Search</h3>
+            <input type="text" class="search-input" id="search-input" placeholder="Search articles...">
+        </div>
+    </aside>
+</div>
+{{ end }}

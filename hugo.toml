@@ -1,0 +1,53 @@
+baseURL = "https://neuroquarkk.github.io/"
+languageCode = "en-us"
+title = "nqu"
+themes = "."
+enableRobotsTxt = true
+
+[params]
+    author = "NeuroQuark"
+    description = "Learning with machines"
+    profileImage = "https://unavatar.io/twitter/neuroquark"
+
+[params.social]
+    twitter = "https://x.com/neuroquark"
+    github = "https://github.com/neuroquarkk"
+
+[menu]
+    [[menu.main]]
+        name = "Articles"
+        url = "/articles/"
+        weight = 1
+
+    [[menu.main]]
+        name = "Tags"
+        url = "/tags/"
+        weight = 2
+
+    [[menu.main]]
+        name = "Projects"
+        url = "/projects/"
+        weight = 3
+
+[pagination]
+    pagerSize = 10
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[markup]
+    [markup.highlight]
+        style = "github-dark"
+        noClasses = false
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+[outputs]
+home = ["HTML", "RSS", "SITEMAP"]
+section = ["HTML", "RSS"]
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
