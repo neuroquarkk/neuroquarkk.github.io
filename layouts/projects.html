@@ -3,7 +3,7 @@
     <h1 class="projects-title">Projects</h1>
     <ul class="projects-list">
         {{ if site.Data.projects }}
-        {{ range site.Data.projects }}
+        {{ range sort site.Data.projects "date" "desc" }}
         <li class="project-card">
             <div class="project-header">
                 <a href="{{ .github }}" class="project-name" target="_blank">{{ .title }}</a>

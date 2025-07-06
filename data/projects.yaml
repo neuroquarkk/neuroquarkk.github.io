@@ -2,6 +2,7 @@
   description: A Game of Life with diverse, interacting species
   github: https://github.com/neuroquarkk/nqugoi
   live: https://neuroquarkk.github.io/nqugoi
+  date: 2025-06-24
   tech:
     - HTML
     - CSS
@@ -10,5 +11,6 @@
 - title: calc
   description: Simple Arithmetic compiler in C
   github: https://github.com/neuroquarkk/calc
+  date: 2025-06-20
   tech:
     - C
