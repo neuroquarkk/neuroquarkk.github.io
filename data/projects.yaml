@@ -1,0 +1,14 @@
+- title: nqugoi
+  description: A Game of Life with diverse, interacting species
+  github: https://github.com/neuroquarkk/nqugoi
+  live: https://neuroquarkk.github.io/nqugoi
+  tech:
+    - HTML
+    - CSS
+    - TypeScript
+
+- title: calc
+  description: Simple Arithmetic compiler in C
+  github: https://github.com/neuroquarkk/calc
+  tech:
+    - C
