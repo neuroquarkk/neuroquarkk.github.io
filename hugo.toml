@@ -7,7 +7,7 @@ enableRobotsTxt = true
 [params]
     author = "NeuroQuark"
     description = "Learning with machines"
-    profileImage = "https://unavatar.io/twitter/neuroquark"
+    profileImage = "https://unavatar.io/x/neuroquark?ttl=24h"
 
 [params.social]
     twitter = "https://x.com/neuroquark"

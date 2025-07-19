@@ -14,3 +14,10 @@
   date: 2025-06-20
   tech:
     - C
+
+- title: rate-limit
+  description: Redis based rate limiter
+  github: https://github.com/neuroquarkk/rate-limit
+  date: 2025-07-17
+  tech:
+    - TypeScript

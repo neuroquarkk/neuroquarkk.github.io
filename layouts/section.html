@@ -1,9 +1,9 @@
 {{ define "main" }}
+{{ if .Pages }}
 <div class="articles-layout">
     <div class="articles-main">
         <h1 class="section-title">All Articles</h1>
 
-        {{ if .Pages }}
         {{ range .Pages.GroupByDate "2006" }}
         <div class="year-group">
             <h2 class="year-title">{{ .Key }}</h2>
@@ -11,9 +11,6 @@
             {{ partial "compact-article.html" . }}
             {{ end }}
         </div>
-        {{ end }}
-        {{ else }}
-        <p class="empty-message">No articles yet</p>
         {{ end }}
     </div>
 
@@ -24,4 +21,7 @@
         </div>
     </aside>
 </div>
+{{ else }}
+<p class="empty-message">No articles yet</p>
+{{ end }}
 {{ end }}
