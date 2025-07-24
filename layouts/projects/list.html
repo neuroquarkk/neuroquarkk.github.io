@@ -1,0 +1,48 @@
+{{ define "main" }}
+    <div class="projects-list">
+        <h1>{{ .Title }}</h1>
+
+        {{ $projects := .Site.Data.projects }}
+        {{ if $projects }}
+            {{ $sortableProjects := slice }}
+            {{ range $projects }}
+                {{ $dateParts := split .date "-" }}
+                {{ if ge (len $dateParts) 3 }}
+                    {{ $isoDate := printf "%s-%s-%s" (index $dateParts 2) (index $dateParts 1) (index $dateParts 0) }}
+                    {{ $sortableProjects = $sortableProjects | append (dict "iso" $isoDate "data" .) }}
+                {{ end }}
+            {{ end }}
+
+            {{ $sortedProjects := sort $sortableProjects "iso" "desc" }}
+            {{ range $sortedProjects }}
+                <article class="project-entry">
+                    <h2>
+                        <a
+                            href="{{ .data.github }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >{{ .data.name }}</a
+                        >
+                        {{ with .data.live }}
+                            <a
+                                class="live-label"
+                                href="{{ . }}"
+                                title="Live Demo"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LIVE
+                            </a>
+                        {{ end }}
+                    </h2>
+
+                    <p>{{ .data.description | markdownify }}</p>
+                </article>
+            {{ end }}
+
+        {{ else }}
+            <p>No projects to display at the moment. Check back soon.</p>
+        {{ end }}
+
+    </div>
+{{ end }}

@@ -1,0 +1,34 @@
+{{ define "main" }}
+    <div class="home-card">
+        {{ with .Site.Params.imgSrc }}
+            <img
+                src="{{ . }}"
+                alt="Profile Picture"
+                class="profile-picture"
+                loading="lazy"
+            />
+        {{ end }}
+
+
+        <h1>{{ .Site.Params.author }}</h1>
+
+        {{ with .Site.Params.bio }}
+            <p>{{ . | markdownify }}</p>
+        {{ end }}
+
+        {{ with .Site.Params.social }}
+            <div class="socials">
+                {{ range . }}
+                    <a
+                        href="{{ .url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="{{ .name }}"
+                    >
+                        {{ partial (printf "icons/%s.html" .icon) . }}
+                    </a>
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+{{ end }}

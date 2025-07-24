@@ -1,0 +1,27 @@
+[
+    {
+        "name": "calc",
+        "date": "19-02-2025",
+        "description": "Simple Arithmetic Compiler in C",
+        "github": "https://github.com/neuroquarkk/calc"
+    },
+    {
+        "name": "cryptexa",
+        "date": "15-07-2025",
+        "description": "Backend vault for storing encrypted secrets securely",
+        "github": "https://github.com/neuroquarkk/cryptexa"
+    },
+    {
+        "name": "nqugoi",
+        "date": "24-06-2025",
+        "description": "Game of Life but with species diversity and interaction",
+        "github": "https://github.com/neuroquarkk/nqugoi",
+        "live": "https://neuroquarkk.github.io/nqugoi/"
+    },
+    {
+        "name": "rate-limit",
+        "date": "17-07-2025",
+        "description": "Pluggable Redis based rate limiter",
+        "github": "https://github.com/neuroquarkk/rate-limit"
+    }
+]

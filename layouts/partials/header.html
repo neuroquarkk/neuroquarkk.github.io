@@ -1,0 +1,22 @@
+<header class="site-header">
+    <nav class="main-nav">
+        <ul>
+            {{ range .Site.Menus.main }}
+                {{ $url := .URL }}
+                {{ $rel := $.RelPermalink }}
+                {{ $isHome := eq $url "/" }}
+                {{ $isActive := or (and $isHome (eq $rel "/")) (and (not $isHome) (strings.HasPrefix $rel $url)) }}
+                <li>
+                    <a
+                        href="{{ .URL }}"
+                        class="{{ if $isActive }}active{{ end }}"
+                        aria-label="{{ .Name }}"
+                        {{ if $isActive }}aria-current="page"{{ end }}
+                    >
+                        {{ partial (printf "icons/%s.html" (lower .Name)) . }}
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

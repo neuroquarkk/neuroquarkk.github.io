@@ -1,0 +1,24 @@
+{{ define "main" }}
+    <article class="article-content">
+        <header class="article-header">
+            <h1>{{ .Title }}</h1>
+
+            <div class="meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}"
+                    >{{ .Date.Format "02 Jan 2006" }}</time
+                >
+                <span aria-hidden="true">&middot;</span>
+                <span>{{ .ReadingTime }} min read</span>
+
+                {{ if gt .WordCount 0 }}
+                    <span aria-label="true">&middot;</span>
+                    <span>{{ .WordCount }} words</span>
+                {{ end }}
+            </div>
+        </header>
+
+        <div class="article-body">
+            {{ .Content }}
+        </div>
+    </article>
+{{ end }}
