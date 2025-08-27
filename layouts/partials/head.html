@@ -1,0 +1,35 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+{{ $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}
+<title>
+    {{ $title }}
+</title>
+
+{{ $cssFile := resources.Get "css/style.css" }}
+{{ with $cssFile }}
+    {{ $minified := . | resources.Minify }}
+    {{ $fingerprinted := $minified | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $fingerprinted.RelPermalink }}" />
+    <noscript>
+        <link rel="stylesheet" href="{{ $fingerprinted.RelPermalink }}" />
+    </noscript>
+{{ end }}
+
+{{ if and (eq .Kind "page") (or .Params.highlight (findRE "<pre|<code" .Content)) }}
+    {{ with resources.Get "css/syntax.css" }}
+        {{ $minSyntax := . | resources.Minify }}
+        {{ $fingerSyntax := $minSyntax | resources.Fingerprint }}
+        <link rel="stylesheet" href="{{ $fingerSyntax.RelPermalink }}" />
+    {{ end }}
+{{ end }}
+
+{{ with .OutputFormats.Get "rss" }}
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="{{ $.Site.Title }}"
+        href="{{ .Permalink }}"
+    />
+{{ end }}
+{{ hugo.Generator }}

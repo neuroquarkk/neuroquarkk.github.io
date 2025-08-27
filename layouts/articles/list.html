@@ -1,0 +1,22 @@
+{{ define "main" }}
+    <div class="article-list">
+        <h1>{{ .Title }}</h1>
+        {{ $pages := where .Pages "Draft" false }}
+        {{ if $pages }}
+            {{ range .Pages.ByDate.Reverse }}
+                <article class="list-entry">
+                    <h2>
+                        <a href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a>
+                    </h2>
+                    <div class="meta">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+                        <span aria-hidden="true">&middot;</span>
+                        <span>{{ .ReadingTime }} min read</span>
+                    </div>
+                </article>
+            {{ end }}
+        {{ else }}
+            <p>No articles to display at the moment. Check back soon.</p>
+        {{ end }}
+    </div>
+{{ end }}

@@ -1,0 +1,30 @@
+baseURL: "https://neuroquarkk.github.io/"
+languageCode: "en-us"
+title: "nqu"
+
+params:
+  author: "NeuroQuark"
+  bio: "*Learning with machines*"
+  imgSrc: "https://unavatar.io/github/neuroquarkk?ttl=7d"
+  social:
+    - url: "https://x.com/neuroquark"
+      icon: "x"
+    - url: "https://github.com/neuroquarkk"
+      icon: "github"
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Articles"
+      url: "/articles"
+      weight: 2
+
+markup:
+  highlight:
+    style: "tokyonight-storm"
+    noClasses: false
+    tabWidth: 4
+    codeFences: true
+    guessSyntax: false
